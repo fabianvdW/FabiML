@@ -1,0 +1,12 @@
+Neuroevolution:
+Wähle generation aus.
+Dann Spiel:
+Zeige alle.
+Zeige besten X%
+Zeige besten
+Zeige schlechtesten x%
+Zeige schlechtesten
+Zeige generation voll auswertung
+Zeige generation debug werte
+
+Generell ein Tab mit Evolutionsverlauf.
