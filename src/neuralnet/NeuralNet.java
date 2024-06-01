@@ -170,8 +170,8 @@ public class NeuralNet implements Serializable {
 				int random = (int) (Math.random() * index.size());
 				int indexI = index.get(random);
 				index.remove(new Integer(indexI));
-				miniBatch[0].addZeile(train_inputs.getMatrix()[indexI]);
-				miniBatch[1].addZeile(train_labels.getMatrix()[indexI]);
+				miniBatch[0].addRow(train_inputs.getMatrix()[indexI]);
+				miniBatch[1].addRow(train_labels.getMatrix()[indexI]);
 			}
 			res.add(miniBatch);
 		}
@@ -414,7 +414,7 @@ public class NeuralNet implements Serializable {
 			Activator a = this.activationFunctions.get(i);
 			currentAusgaben = currentEingaben.applyFunctionOnMatrix(j -> a.transform(j));
 			double[] bias = { 1 };
-			currentAusgaben.addZeile(bias);
+			currentAusgaben.addRow(bias);
 			this.ausgaben.add(currentAusgaben);
 			currentEingaben = this.weights.get(i + 1).multiply(currentAusgaben);
 			this.eingaben.add(currentEingaben);

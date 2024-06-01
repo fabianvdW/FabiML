@@ -5,6 +5,8 @@ import java.io.DataInputStream;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.IOException;
+import java.nio.file.Path;
+import java.nio.file.Paths;
 
 import matrix.Matrix;
 
@@ -60,6 +62,11 @@ public class MnistDataReader {
 	public Matrix readData(String path) {
 		DataInputStream diS = null;
 		try {
+			Path currentRelativePath = Paths.get("");
+			String s = currentRelativePath.toAbsolutePath().toString();
+			System.out.println("Current absolute path is: " + s);
+			System.out.println("Working Directory = " + System.getProperty("user.dir"));
+			System.out.println(path);
 			File file = new File(path);
 			diS = new DataInputStream(new BufferedInputStream(new FileInputStream(file)));
 			int magicNumber = diS.readInt();

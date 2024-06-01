@@ -27,16 +27,16 @@ public class Matrix implements Serializable {
 		return res;
 	}
 
-	public void addZeile(double[] zeile) {
-		if (zeile.length != this.breite) {
-			throw new IllegalArgumentException("Row does not correspont with dimension of Matrix");
+	public void addRow(double[] row) {
+		if (row.length != this.breite) {
+			throw new IllegalArgumentException("Row does not correspond with dimension of Matrix");
 		}
 		this.hoehe += 1;
 		double[][] newM = new double[this.hoehe][this.breite];
 		for (int i = 0; i < this.hoehe - 1; i++) {
 			newM[i] = this.matrix[i];
 		}
-		newM[this.hoehe - 1] = zeile;
+		newM[this.hoehe - 1] = row;
 		this.matrix = newM;
 	}
 

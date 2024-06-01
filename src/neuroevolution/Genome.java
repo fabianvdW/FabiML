@@ -101,7 +101,7 @@ public class Genome implements Serializable {
 			hiddens.remove(ng);
 		}
 		HashMap<NodeGene,NodeOutput> bisherBerechneteOutputs = new HashMap<NodeGene,NodeOutput>();
-		//Inputs hinzufügen
+		//Inputs hinzufÃ¼gen
 		for(int i=0;i<inputs.size();i++){
 			NodeGene ng = inputs.get(i);
 			double d= input[i];
@@ -205,7 +205,7 @@ public class Genome implements Serializable {
 			n1=n2;
 			n2=local;
 		}
-		//Überprüfe ob es Connection bereits gibt
+		//ÃœberprÃ¼fe ob es Connection bereits gibt
 		for(ConnectionGene con: this.connections){
 			if(con.in.equals(n1)&&con.out.equals(n2)||con.in.equals(n2)&&con.out.equals(n1)){
 				if(!con.enabled){
